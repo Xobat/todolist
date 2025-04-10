@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { TaskList } from './components/TaskList';
+import { TaskProvider } from './context/TaskContext';
+import { ThemeProvider } from './context/ThemeContext';
+import { ThemeToggle } from './components/ThemeToggle';
+import './index.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const theme = localStorage.getItem('todo_theme');
+    const browserTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
+    const actualTheme = theme ? theme : browserTheme;
+
+    return (
+        <ThemeProvider>
+            <TaskProvider>
+                <div id="main-app" className={`app ${actualTheme}-theme`}>
+                    <div className="toggle-button">
+                        <ThemeToggle />
+                    </div>
+                    <main>
+                        <TaskList />
+                    </main>
+                </div>
+            </TaskProvider>
+        </ThemeProvider>
+    );
 }
 
 export default App;

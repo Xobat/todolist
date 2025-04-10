@@ -1,0 +1,23 @@
+.defaultButton:hover {
+    opacity: .8;
+}
+.defaultButton {
+    transition: all .3s;
+    background-color: var(--button-bg-color);
+    color: var(--text-color);
+    display: flex;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    justify-content: center;
+}
+.invisibleButton {
+    padding: 0.25rem;
+    border: none;
+    background-color: transparent;
+}
+
+.button {
+    cursor: pointer;
+}

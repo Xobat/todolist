@@ -1,0 +1,43 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+
+.header {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.body {
+    margin-top: 20px;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+}
+
+.cellHeader {
+    font-weight: 600;
+}
+
+.empty {
+    text-align: center;
+    color: #888;
+    padding: 24px;
+    font-style: italic;
+}
+
+.header {
+    font-size: 1.5rem;
+    text-align: center;
+}
