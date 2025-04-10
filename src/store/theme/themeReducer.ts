@@ -1,20 +1,16 @@
-import { themeStorage, ThemeType } from '../../services/themeStorage';
+import { themeStorage, ThemeType, ThemeAction } from './';
 
 export type ThemeState = {
     theme: ThemeType;
 };
 
-export type ThemeAction =
-    | { type: 'SET_THEME'; payload: { theme: ThemeType } }
-    | { type: 'TOGGLE_THEME' };
-
-export function getInitialThemeState(): ThemeState {
+export const getInitialThemeState = (): ThemeState => {
     return {
         theme: themeStorage.getTheme()
     };
 }
 
-export function themeReducer(state: ThemeState, action: ThemeAction): ThemeState {
+export const themeReducer = (state: ThemeState, action: ThemeAction): ThemeState => {
     switch (action.type) {
         case 'SET_THEME':
             const newTheme = action.payload.theme;

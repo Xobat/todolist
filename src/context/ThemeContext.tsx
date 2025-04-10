@@ -1,9 +1,9 @@
-import React, { createContext, useReducer, ReactNode, useEffect } from 'react';
-import { themeReducer, getInitialThemeState, ThemeState } from '../store/theme/themeReducer';
+import {createContext, useReducer, ReactNode, useEffect, Dispatch} from 'react';
+import { themeReducer, getInitialThemeState, ThemeState, ThemeAction } from '../store';
 
 type ThemeContextType = {
     state: ThemeState;
-    dispatch: React.Dispatch<any>;
+    dispatch: Dispatch<ThemeAction>;
 };
 
 export const ThemeContext = createContext<ThemeContextType | null>(null);

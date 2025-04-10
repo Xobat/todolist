@@ -1,4 +1,4 @@
-import { TaskListItemType } from '../store/task/taskTypes';
+import { TaskListItemType } from './taskTypes';
 
 const STORAGE_KEY = 'todo_tasks';
 const FILTER_KEY = 'todo_filter';

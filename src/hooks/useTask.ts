@@ -1,12 +1,12 @@
 import { useContext } from 'react';
-import { TaskContext } from '../context/TaskContext';
-import {FilterType} from "../services/taskStorage";
+import { TaskContext } from '../context';
+import { FilterType, TaskListItemType } from '../store';
 
 export function useTask() {
     const context = useContext(TaskContext);
 
     if (!context) {
-        throw new Error('useTask must be used within a TaskProvider');
+        throw new Error('useTask должен быть использован вместе с TaskProvider');
     }
 
     const { state, dispatch } = context;
@@ -34,14 +34,13 @@ export function useTask() {
     };
 
     const setFilter = (filter: FilterType) => {
-        console.log(filter);
         dispatch({
             type: 'SET_FILTER',
             payload: { filter }
         });
     };
 
-    const filteredTasks = state.tasks.filter(task => {
+    const filteredTasks = state.tasks.filter((task: TaskListItemType) => {
         if (state.filter === 'all') return true;
         if (state.filter === 'active') return !task.isDone;
         if (state.filter === 'completed') return task.isDone;

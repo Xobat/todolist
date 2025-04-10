@@ -1,10 +1,6 @@
 import React from 'react';
-import { TaskList } from './components/TaskList';
-import { TaskProvider } from './context/TaskContext';
-import { ThemeProvider } from './context/ThemeContext';
-import { ThemeToggle } from './components/ThemeToggle';
-import './index.css';
-
+import { TaskList, ThemeToggle } from './components';
+import { TaskProvider, ThemeProvider } from './context'
 function App() {
     const theme = localStorage.getItem('todo_theme');
     const browserTheme = window.matchMedia('(prefers-color-scheme: dark)').matches

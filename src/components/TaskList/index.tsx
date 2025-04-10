@@ -1,8 +1,6 @@
-import { TaskListItem } from "./Item";
-import styles from "./style.module.css";
-import {useTask} from "../../hooks/useTask";
-import {TaskListAddForm} from "./AddForm";
-import {TaskListFilter} from "./Filter";
+import { TaskListItem, TaskListAddForm, TaskListFilter } from '../';
+import { useTask } from '../../hooks';
+import styles from './style.module.css';
 
 export const TaskList = () => {
     const { tasks, filter } = useTask();

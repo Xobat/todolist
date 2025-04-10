@@ -1,5 +1,4 @@
-export type ThemeType = 'light' | 'dark';
-
+import { ThemeType } from './';
 const THEME_KEY = 'todo_theme';
 
 export const themeStorage = {

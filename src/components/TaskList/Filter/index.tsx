@@ -1,5 +1,4 @@
-import React from 'react';
-import { useTask } from '../../../hooks/useTask';
+import { useTask } from '../../../hooks';
 import styles from './style.module.css';
 
 export const TaskListFilter = () => {

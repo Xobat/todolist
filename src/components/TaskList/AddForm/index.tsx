@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Button } from '../../../ui-kit/Button';
+import { Button } from '../../../ui-kit';
+import { useTask } from '../../../hooks';
 import styles from './style.module.css';
-import {useTask} from "../../../hooks/useTask";
 
 export const TaskListAddForm = () => {
     const [title, setTitle] = useState('');

@@ -1,12 +1,7 @@
-import { Button } from "../../../ui-kit/Button";
-import styles from "./style.module.css";
-import {useTask} from "../../../hooks/useTask";
-
-export type TaskListItemType = {
-    id: number;
-    title: string;
-    isDone: boolean;
-}
+import { Button } from '../../../ui-kit';
+import { TaskListItemType } from '../../../store';
+import { useTask } from '../../../hooks';
+import styles from './style.module.css';
 
 type TaskListItemProps = {
     item: TaskListItemType;

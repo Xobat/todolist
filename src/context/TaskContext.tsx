@@ -1,12 +1,12 @@
-import React, { createContext, useReducer, ReactNode, Dispatch } from 'react';
-import { taskReducer, getInitialTasksState, TasksState, TasksAction } from '../store/task/taskReducer';
+import { createContext, useReducer, ReactNode, Dispatch } from 'react';
+import { taskReducer, getInitialTasksState, TasksState, TasksAction } from '../store';
 
 type TaskContextType = {
     state: TasksState;
     dispatch: Dispatch<TasksAction>;
-} | null;
+};
 
-export const TaskContext = createContext<TaskContextType>(null);
+export const TaskContext = createContext<TaskContextType | null>(null);
 
 export function TaskProvider({ children }: { children: ReactNode }) {
     const [state, dispatch] = useReducer(taskReducer, getInitialTasksState());

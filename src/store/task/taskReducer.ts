@@ -1,18 +1,7 @@
-import { TaskListItemType } from '../../components/TaskList/Item';
-import { taskStorage, FilterType } from '../../services/taskStorage';
+import { TasksAction, TasksState } from './taskTypes';
+import { taskStorage } from './taskStorage';
 
-export type TasksState = {
-    tasks: TaskListItemType[];
-    filter: FilterType
-};
-
-export type TasksAction =
-    | { type: 'ADD_TASK'; payload: { title: string } }
-    | { type: 'REMOVE_TASK'; payload: { id: number } }
-    | { type: 'TOGGLE_TASK'; payload: { id: number; isDone: boolean } }
-    | { type: 'SET_FILTER'; payload: { filter: 'all' | 'active' | 'completed' } };
-
-export function taskReducer(state: TasksState, action: TasksAction): TasksState {
+export const taskReducer = (state: TasksState, action: TasksAction): TasksState => {
     let newState: TasksState;
 
     switch (action.type) {
@@ -64,7 +53,7 @@ export function taskReducer(state: TasksState, action: TasksAction): TasksState 
     return newState;
 }
 
-export function getInitialTasksState(): TasksState {
+export const getInitialTasksState = (): TasksState => {
     return {
         tasks: taskStorage.getTasks(),
         filter: taskStorage.getFilter()
