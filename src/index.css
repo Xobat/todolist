@@ -12,10 +12,6 @@ code {
     monospace;
 }
 
-.app {
-  padding: 20px;
-}
-
 :root, .light-theme {
   --bg-color: #f9f9f9;
   --bg-card: #ffffff;
@@ -50,4 +46,13 @@ code {
   position: sticky;
   top: 20px;
   margin-left: -20px;
+}
+
+@media (max-width: 480px) {
+  #main-app {
+    padding: 0;
+  }
+  .toggle-button {
+    margin-left: 0;
+  }
 }

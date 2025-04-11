@@ -1,4 +1,4 @@
-import style from './Button.module.css';
+import style from './style.module.css';
 
 type ButtonProps = {
     title: string;

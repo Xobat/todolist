@@ -45,3 +45,10 @@
     justify-content: center;
     width: 100%;
 }
+
+@media (max-width: 480px) {
+    .row {
+        padding: 4px;
+        grid-template-columns: 32px 1fr 80px;
+    }
+}
